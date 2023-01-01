@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="innerContainer">
+            <div class="text">SignUp</div>
+            <form onsubmit="submitFrom(event)">
+                <div class="section">
+                    <span class="icon fa fa-user"></span>
+                    <input type="email" required placeholder="Email" name="email">
+                </div>
+                <div class="section">
+                    <span class="icon fa fa-lock"></span>
+                    <input id="pwd" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}\d"
+                        title="Must contain at least one number and one uppercase and lowercase letter,and Last digit Must be any Number and must be at least 8 character or more characters"
+                        required placeholder="password" name="password">
+                    <span class="pass fa fa-eye-slash" onclick="passwordToggle(this)"></>
+                </div>
+                <div id="message">
+                    <h6 class="h6">Password must contain the following</h6>
+                    <p class="invalid" id="letter">&nbsp A <strong>lowercase</strong></p>
+                    <p class="invalid" id="capital">&nbsp A <strong>capital(uppercase)</strong></p>
+                    <p class="invalid" id="number">&nbsp A <strong>number</strong></p>
+                    <p class="invalid" id="last">&nbsp last <strong>Digit must be a number</strong></p>
+                    <p class="invalid" id="length">&nbsp minimun <strong>8 characters</strong></p>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
